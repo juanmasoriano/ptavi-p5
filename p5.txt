@@ -165,10 +165,21 @@ Se ha capturado una sesión SIP (archivo sip.cap.gz), que se puede abrir con Wir
 
 12. Vamos a ver más a fondo el intercambio RTP. En Telephony hay una opción RTP. Empecemos mirando los flujos RTP.
  ** ¿Cuántos flujos hay? ¿por qué?
+
+        Encontramos dos flujos, se debe a que se transmite tanto audio como video.
+
  ** ¿Cuántos paquetes se pierden?
+
+        Ninguno.
+
  ** ¿Cuál es el valor máximo del delta? ¿Y qué es lo que significa el valor de delta?
+
+        1290.479 y 1290.444. Nos indica la diferencia entre la llegada del paquete y la llegada del paquete anterior en el flujo.
+
  ** ¿Cuáles son los valores de jitter (medio y máximo)? ¿Qué quiere decir eso? ¿Estamos ante una conversación de calidad?
 
+        Medios : 153.240 y 42.500.       Máximos: 183.096 y 119.635.
+        No es una conversación de calidad ya que el jitter es alto.
 
 13. Elige un paquete RTP de audio. Analiza el flujo de audio en Telephony -> RTP -> Stream Analysis.
  ** ¿Cuánto valen el delta y el jitter para el primer paquete que ha llegado?
