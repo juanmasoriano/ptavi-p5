@@ -241,7 +241,7 @@ Se ha capturado una sesión SIP (archivo sip.cap.gz), que se puede abrir con Wir
 
  ** ¿En qué se diferencia con la instrucción que se utilizó con anterioridad (al principio de la sesión)?
 
-        En que estaa es remove binding. Es para cancelar lo que se hizo con anterioridad.
+        En que esta es remove binding. Es para cancelar lo que se hizo con anterioridad.
 
 [Al terminar el ejercicio es recomendable hacer commit de los ficheros modificados]
 
@@ -254,8 +254,12 @@ Captura una sesión SIP de una conversación con el número SIP sip:9999@qxip.ne
 
 17. Observa las diferencias en el inicio de la conversación entre el entorno del laboratorio y el del ejercicio anterior:
  ** ¿Es necesario el uso de DNS y STUN? ¿Por qué?
+
+        Si son necesarios, el dns manejara nuestra direccion para ponernos en contacto con la otra maquina y dar a conocer como encontrarnos.
+
  ** ¿Son diferentes el registro y la descripción de la sesión?
 
+        Si, en la primera solo se hace un binding y en esta captura aparecen 3 bindings.
 
 18. Identifica las diferencias existentes entre esta conversación y la conversación anterior:
  ** ¿Cuántos flujos tenemos?
