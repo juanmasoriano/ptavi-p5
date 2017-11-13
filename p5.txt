@@ -183,30 +183,65 @@ Se ha capturado una sesión SIP (archivo sip.cap.gz), que se puede abrir con Wir
 
 13. Elige un paquete RTP de audio. Analiza el flujo de audio en Telephony -> RTP -> Stream Analysis.
  ** ¿Cuánto valen el delta y el jitter para el primer paquete que ha llegado?
+
+        jitter: 0 ms
+        delta: 0 ms
+
  ** ¿Podemos saber si éste es el primer paquete que nos han enviado?
+
+        Si por el timestamp que  esta a 0y el numero de secuencia.
+
  ** Los valores de jitter son menores de 10ms hasta un paquete dado. ¿Cuál?
+
+        Hasta el paquete 247.
+
  ** ¿A qué se debe el cambio tan brusco del jitter?
+
+        A que la delta ha crecido mucho tambien.
+
  ** ¿Es comparable este cambio con el tiempo desde la recepción del paquete anterior? ¿Por qué?
+
+        Si porque la delta nos indica desde hace cuanto se ha enviado el paquete anterior.
+
  ** ¿Cuál es la dependencia entre el tiempo transcurrido desde el paquete anterior y el valor de jitter?
 
+        El jitter es la variacion en el retardo en un cierto plazo. Si el retardo varía demasiado el jitter sera mayor.
 
 14. En Telephony selecciona el menú VoIP calls. Verás que se lista la llamada de voz IP capturada en una ventana emergente. Selecciona esa llamada y pulsa el botón Graph.
  ** ¿Cuánto dura la conversación?
+
+     24 segundos.   
+
  ** ¿Cuáles son sus SSRC? ¿Por qué hay varios SSRCs? ¿Hay CSRCs?
+
+        0xBF4AFD37
 
 
 15. Identifica la trama donde se finaliza la conversación.
  ** ¿Qué método SIP se utiliza?
+
+        Bye "dirección sip"
+        200 OK
  ** ¿En qué trama(s)?
+
+        entre la 938 y la 941.
+
  ** ¿Por qué crees que se envía varias veces?
 
+        esperando a que se confirme que ha llegado el mensaje.
 
 16. Finalmente, se cierra la aplicación de VozIP.
  ** ¿Por qué aparece una instrucción SIP del tipo REGISTER?
+
+        Para cancelar el binding.
+
  ** ¿En qué trama sucede esto?
+
+        En la 950. 
+
  ** ¿En qué se diferencia con la instrucción que se utilizó con anterioridad (al principio de la sesión)?
 
-
+        En que estaa es remove binding. Es para cancelar lo que se hizo con anterioridad.
 
 [Al terminar el ejercicio es recomendable hacer commit de los ficheros modificados]
 
